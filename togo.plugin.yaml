@@ -1,0 +1,20 @@
+name: bot
+module: github.com/togo-framework/bot
+description: Chat-bot subsystem — a Bot driver contract + command/message handler registry that works across Telegram, Discord and Slack.
+version: 0.1.0
+category: bot
+kind: base
+priority: late
+import: github.com/togo-framework/bot
+env:
+  - name: BOT_DRIVER
+    description: Selected bot platform driver (telegram | discord | slack). Empty disables the bot.
+    required: false
+claude: .claude
+drivers:
+  - name: telegram
+    plugin: togo-framework/bot-telegram
+  - name: discord
+    plugin: togo-framework/bot-discord
+  - name: slack
+    plugin: togo-framework/bot-slack
